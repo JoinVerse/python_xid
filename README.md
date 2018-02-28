@@ -64,7 +64,7 @@ from vid import Vid
 guid = Vid()
 
 print guid.string()
-// Output: 9m4e2mr0ui3e8a215n4g
+# Output: 2kbo9q3ma9h2en3o71ig
 ```
 
 Get `vid` embedded info:
