@@ -95,12 +95,12 @@ class Vid(object):
 
     def time(self):
         # type: () -> int
-        return int((self.value[0] << 56 |
-                    self.value[1] << 48 |
-                    self.value[2] << 40 |
-                    self.value[3] << 32 |
-                    self.value[4] << 24 |
-                    self.value[5] << 16) / precision)
+        return (self.value[0] << 56 |
+                self.value[1] << 48 |
+                self.value[2] << 40 |
+                self.value[3] << 32 |
+                self.value[4] << 24 |
+                self.value[5] << 16) / precision
 
     def string(self):
         # type: () -> str

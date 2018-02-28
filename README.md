@@ -70,8 +70,6 @@ print guid.string()
 Get `vid` embedded info:
 
 ```python
-guid.machine()
-guid.pid()
 guid.time()
 guid.counter()
 ```

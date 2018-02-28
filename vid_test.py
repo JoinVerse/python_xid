@@ -5,7 +5,7 @@ from vid import Vid
 TestVids = [
     {
         'vid': Vid([0x15, 0x17, 0x7a, 0x77, 0x83, 0x4f, 0x70, 0x52, 0x31, 0x5d, 0x47, 0x96]),
-        'ts': 1519818052,
+        'ts': 1519818052.9835212,
         'counter': 123498317825942
     },
     {
