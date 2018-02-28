@@ -10,4 +10,4 @@ sudo: false
 install:
   - which pip3 && pip3 install --upgrade coverage || pip install --upgrade coverage
 script:
-  - coverage run --branch --omit *_test.py xid_test.py --verbose && coverage report -m --fail-under=90 
+  - coverage run --branch --omit *_test.py vid_test.py --verbose && coverage report -m --fail-under=90 
