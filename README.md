@@ -55,7 +55,7 @@ References:
 ## Install
 
 ```bash
-easy_install python_vid
+pip install git+git://github.com/JoinVerse/pyvid.git@4d6328d
 ```
 ## Usage
 
@@ -78,4 +78,4 @@ guid.counter()
 
 ## Licenses
 
-All source code is licensed under the [MIT License](https://raw.github.com/JoinVerse/vid/master/LICENSE).
+All source code is licensed under the [MIT License](https://raw.github.com/JoinVerse/pyvid/master/LICENSE).
