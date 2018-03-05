@@ -126,7 +126,7 @@ class Vid(object):
     def from_string(cls, s):
         # type: (str) -> Vid
         val = base32hex.b32decode(s.upper())
-        value_check = [0 <= x < 255 for x in val]
+        value_check = [0 <= x <= 255 for x in val]
 
         if not all(value_check):
             raise InvalidVid(s)
