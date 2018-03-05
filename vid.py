@@ -2,10 +2,7 @@
 # almost a direct copy of https://github.com/rs/Xid
 # Changes to make more pythonic as needed.
 
-import hashlib
 import os
-import platform
-import time
 from datetime import datetime
 import threading
 
@@ -28,15 +25,15 @@ class InvalidVid(Exception):
     pass
 
 
-def randInt():
+def rand_int():
     # type: () -> int
     buf = str(os.urandom(6))
     buford = list(map(ord, buf))
     return buford[0] << 40 | buford[1] << 32 | buford[2] << 24 | buford[3] << 16 | buford[4] << 8 | buford[5]
 
 
-def generateNextId():
-    id = randInt()
+def generate_next_id():
+    id = rand_int()
     lock = threading.Lock()
 
     while True:
@@ -47,7 +44,7 @@ def generateNextId():
         yield new_id
 
 
-objectIDGenerator = generateNextId()
+objectIDGenerator = generate_next_id()
 
 
 def generate_new_vid():
@@ -69,7 +66,7 @@ def generate_new_vid():
     id[8] = (i >> 24) & 0xff
     id[9] = (i >> 16) & 0xff
     id[10] = (i >> 8) & 0xff
-    id[11] = (i) & 0xff
+    id[11] = i & 0xff
 
     return id
 
@@ -94,7 +91,7 @@ class Vid(object):
         return datetime.fromtimestamp(self.time())
 
     def time(self):
-        # type: () -> int
+        # type: () -> float
         return (self.value[0] << 56 |
                 self.value[1] << 48 |
                 self.value[2] << 40 |
@@ -129,7 +126,7 @@ class Vid(object):
     def from_string(cls, s):
         # type: (str) -> Vid
         val = base32hex.b32decode(s.upper())
-        value_check = [0 < x < 255 for x in val]
+        value_check = [0 <= x < 255 for x in val]
 
         if not all(value_check):
             raise InvalidVid(s)

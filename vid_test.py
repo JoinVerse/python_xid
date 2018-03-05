@@ -26,12 +26,13 @@ class TestVid(unittest.TestCase):
         self.assertEqual(len(set(ids)), 1000)
 
     def test_from_string(self):
-        x = Vid()
-        y = Vid.from_string(x.string())
+        for i in range(0, 1000):
+            x = Vid()
+            y = Vid.from_string(x.string())
 
-        self.assertEqual(x.value, y.value)
-        self.assertEqual(x.bytes(), y.bytes())
-        self.assertEqual(x.string(), y.string())
+            self.assertEqual(x.value, y.value)
+            self.assertEqual(x.bytes(), y.bytes())
+            self.assertEqual(x.string(), y.string())
 
     def test_timestamp(self):
         for x in TestVids:

@@ -11,8 +11,10 @@ for index, i in enumerate(encodeHex):
 
 padChar = "="
 
+
 class BadPadding(Exception):
     pass
+
 
 def encode(src, str_map):
     dst = []
