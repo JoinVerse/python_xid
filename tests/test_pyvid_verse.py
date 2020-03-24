@@ -1,6 +1,8 @@
 import unittest
+from vid import __version__, Vid
 
-from vid import Vid
+def test_version():
+    assert __version__ == '0.1.0'
 
 TestVids = [
     {
@@ -14,7 +16,6 @@ TestVids = [
         'counter': 1
     }
 ]
-
 
 class TestVid(unittest.TestCase):
     def test_no_duplicates(self):
@@ -51,7 +52,3 @@ class TestVid(unittest.TestCase):
         x = Vid.from_string('2kbnkts39to54cat8ub0')
         self.assertEqual(x.value, [0x15, 0x17, 0x7a, 0x77, 0x83, 0x4f,
                                    0x70, 0x52, 0x31, 0x5d, 0x47, 0x96])
-
-
-if __name__ == '__main__':
-    unittest.main()

@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "pyvid-verse"
+version = "0.1.0"
+description = "Globally Unique ID Generator"
+license = "MIT"
+authors = ["JoinVerse <backend@joinverse.com>"]
+readme = "README.md"
+homepage = "https://github.com/JoinVerse/vid"
+repository = "https://github.com/JoinVerse/vid"
+documentation = "https://github.com/JoinVerse/vid"
+keywords ["vid", "pyvid", "verse"]
+include = ["LICENSE"]
+packages = [
+    {include = "vid"}
+]
+
+[tool.poetry.dependencies]
+python = "^3.6"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.4.1"
+
+[build-system]
+requires = ["poetry>=1.0.5"]
+build-backend = "poetry.masonry.api"

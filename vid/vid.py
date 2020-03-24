@@ -6,7 +6,7 @@ import os
 from datetime import datetime
 import threading
 
-import base32hex
+from . import base32hex
 
 # MyPy imports
 try:
